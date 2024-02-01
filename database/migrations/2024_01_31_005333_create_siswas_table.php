@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('siswas', function (Blueprint $table) {
-            $table->id('nisn');
+            $table->char('nisn', 10)->primary();
             $table->char('nis', 8);
             $table->string('nama', 35);
             $table->foreignId('kelas_id')->constrained('kelass');
