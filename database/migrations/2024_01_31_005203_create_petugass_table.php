@@ -13,7 +13,7 @@ return new class extends Migration
     {
         $levels = ['admin', 'petugas'];
         Schema::create('petugass', function (Blueprint $table) use ($levels) {
-            $table->id();
+            $table->id('id_petugas');
             $table->string('username', 25);
             $table->string('password', 32);
             $table->string('nama_petugas', 35);

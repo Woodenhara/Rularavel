@@ -28,10 +28,10 @@ class SiswaSeeder extends Seeder
             "nisn"=> Str::random(10),
             'nis' => Str::random(8),
             'nama'=> Str::random(35),
-            'kelas_id' => $kelasId,
+            'id_kelas' => $kelasId,
             'alamat' => Str::random(40),
             'no_telp'=> Str::random(13),
-            'spp_id' => $sppId,
+            'id_spp' => $sppId,
         ]);
     }
 }

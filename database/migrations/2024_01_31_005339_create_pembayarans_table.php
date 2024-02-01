@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pembayarans', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('petugas_id')->constrained('petugass');
-            $table->string('nisn', 10);
+            $table->id('id_pembayaran');
+            $table->foreignId("id_petugas")->references("id_petugas")->on("petugass");
+            $table->char('nisn', 10)->index();
             $table->date('tgl_bayar');
             $table->string('bulan_dibayar', 8);
             $table->string('tahun_dibayar', 4);
-            $table->foreignId('spp_id')->constrained('spps');
+            $table->foreignId("id_spp")->references("id_spp")->on("spps");
             $table->integer('jumlah_bayar');
             $table->timestamps();
         });

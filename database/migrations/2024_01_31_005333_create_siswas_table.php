@@ -15,10 +15,10 @@ return new class extends Migration
             $table->char('nisn', 10)->primary();
             $table->char('nis', 8);
             $table->string('nama', 35);
-            $table->foreignId('kelas_id')->constrained('kelass');
+            $table->foreignId("id_kelas")->references("id_kelas")->on("kelass");
             $table->text('alamat');
             $table->string('no_telp', 13);
-            $table->foreignId('spp_id')->constrained('spps');
+            $table->foreignId("id_spp")->references("id_spp")->on("spps");
             $table->timestamps();
         });
     }
