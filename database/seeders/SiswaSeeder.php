@@ -15,14 +15,9 @@ class SiswaSeeder extends Seeder
     public function run(): void
     {
         //
-        $kelasId = DB::table("kelass")->insertGetId([
-            'nama_kelas' => 'XI RPL 2',
-            'kompetensi_keahlian' => 'Basis Data',
-            ]);
-        $sppId = DB::table("spps")->insertGetId([
-            'tahun' => 1997,
-            'nominal' => 999999999,
-            ]);
+        $kelasId = DB::table("kelass")->value("id_kelas");
+        
+        $sppId = DB::table("spps")->value("id_spp");
 
         DB::table("siswas")->insert([
             "nisn"=> Str::random(10),
