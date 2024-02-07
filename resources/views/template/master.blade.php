@@ -17,7 +17,8 @@
 	<title>AdminKit Demo - Bootstrap 5 Admin Template</title>
 
 	<link href="{{asset('adminkit/static/css/app.css')}}" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+@stack('css')
 </head>
 
 <body>
@@ -36,6 +37,7 @@
 	<script src="{{asset('adminkit/static/js/app.js')}}"></script>
 
     @include(('template.partials.dales'))
+@stack('js')
 </body>
 
 </html>
