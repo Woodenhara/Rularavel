@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SppController;
+use App\Http\Controllers\KelassController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,6 @@ Route::controller(SppController::class)->group(function () {
     Route::get('/spp/{id}/edit','edit')->name('spp.sppc.edit');
     // Route::get('/genre/{genre}','read')->name('genre.read');
 });
+
+Route::resource('/kelass', KelassController::class);
+
