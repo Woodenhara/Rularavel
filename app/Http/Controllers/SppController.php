@@ -79,7 +79,6 @@ class SppController extends Controller
             'tahun' => $request["tahun"],
             'nominal' => $request["nominal"],
         ]);
-
         return redirect()->route("spp.sppc.index")->with(["success" =>"Data telah diubah!"]);
     }
 

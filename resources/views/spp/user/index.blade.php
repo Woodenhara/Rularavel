@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 @endpush
 
-@section('header', 'Input data kelas')
+@section('header', 'Input data user')
 
 @section('event')
 @if ($message = Session::get('success'))
@@ -18,7 +18,7 @@
     <div class="col-12 d-flex w-100">
         <div class="card flex-fill">
             <div class="card-header">
-                <a href="{{ route('kelass.create') }}" class="btn btn-primary">
+                <a href="{{ route('user.create') }}" class="btn btn-primary">
                     <i class="align-middle me-2" data-feather="plus-square"></i> <span
                         class="align-middle">Tambah</span>
                 </a>
@@ -27,22 +27,30 @@
                 <thead>
                     <tr>
                         <th>Id Kelas</th>
-                        <th class="d-none d-xl-table-cell">Nama Kelas</th>
-                        <th class="d-none d-xl-table-cell">Kompetensi Keahlian</th>
+                        <th class="d-none d-xl-table-cell">Username</th>
+                        <th class="d-none d-xl-table-cell">Password</th>
+                        <th class="d-none d-xl-table-cell">Nama Petugas</th>
+                        <th class="d-none d-xl-table-cell">Level</th>
                         <th class="d-none d-xl-table-cell">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($kelass as $key => $value)
+                    @forelse ($user as $key => $value)
                     <tr>
                         <td>
                             {{ $key + 1 }}
                         </td>
                         <td>
-                            {{ $value->nama_kelas }}
+                            {{ $value->username }}
                         </td>
                         <td>
-                            {{ $value->kompetensi_keahlian }}
+                            {{ $value->password }}
+                        </td>
+                        <td>
+                            {{ $value->nama_petugas }}
+                        </td>
+                        <td>
+                            {{ $value->level }}
                         </td>
                         <td>
                             <form action="{{ route('kelass.destroy', $value->id) }}" method="post"

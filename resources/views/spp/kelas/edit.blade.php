@@ -5,7 +5,7 @@
 @section('event')
 <div class="col-12 col-lg-flex w-100">
     <div class="card">
-        <form action="{{ route('kelass.update', $kelass->id_kelas) }}" method="POST">
+        <form action="{{ route('kelass.update', $kelass->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-header">

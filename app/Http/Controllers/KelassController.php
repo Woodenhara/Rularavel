@@ -14,7 +14,7 @@ class KelassController extends Controller
     public function index()
     {
         //
-        $kelass = Kelass::select('id_kelas', 'nama_kelas', 'kompetensi_keahlian')->get();
+        $kelass = Kelass::select('id', 'nama_kelas', 'kompetensi_keahlian')->get();
         return view('spp.kelas.index', compact('kelass'));
     }
 
