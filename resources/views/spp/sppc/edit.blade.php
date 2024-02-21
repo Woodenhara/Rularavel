@@ -5,7 +5,7 @@
 @section('event')
 <div class="col-md-12 col-lg-flex">
     <div class="card">
-        <form action="{{ route('spp.sppc.update', $spp->id_spp)}}" method="POST">
+        <form action="{{ route('spp.sppc.update', $spp->id)}}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-header">

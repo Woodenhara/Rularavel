@@ -29,6 +29,7 @@
                         <th>Id Spp</th>
                         <th class="d-none d-xl-table-cell">Tahun</th>
                         <th class="d-none d-xl-table-cell">Nominal</th>
+                        <th class="d-none d-xl-table-cell">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,12 +45,12 @@
                             {{ $value->nominal }}
                         </td>
                         <td>
-                            <form action="{{ route('spp.sppc.destroy', $value->id_spp) }}" method="post"
+                            <form action="{{ route('spp.sppc.destroy', $value->id) }}" method="post"
                                 style="display: inline">
-                                <a href="{{ route('spp.sppc.show', $value->id_spp) }}" class="btn btn-sm btn-info">
+                                <a href="{{ route('spp.sppc.show', $value->id) }}" class="btn btn-sm btn-info">
                                     Detail
                                 </a>
-                                <a href="{{ route('spp.sppc.edit', $value->id_spp) }}" class="btn btn-sm btn-warning">
+                                <a href="{{ route('spp.sppc.edit', $value->id) }}" class="btn btn-sm btn-warning">
                                     Edit
                                 </a>
                                 @csrf

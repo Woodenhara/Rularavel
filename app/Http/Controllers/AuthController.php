@@ -27,7 +27,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             if (auth()->user()->level == 'petugas')
             { return redirect()->route('pembayaran'); } else
-            { return redirect()->route('kelass.index'); }
+            { return redirect()->route('spp.sppc.index'); }
         }
         return back()->withErrors([
             'notif' => 'Credential do not match with our records',

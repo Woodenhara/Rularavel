@@ -60,7 +60,7 @@ class SppController extends Controller
     public function edit(string $id)
     {
         //
-        $spp = DB::table("spps")->where('id_spp', $id)->first();
+        $spp = DB::table("spps")->where('id', $id)->first();
         return view('spp.sppc.edit', compact('spp'));
     }
 
@@ -75,7 +75,7 @@ class SppController extends Controller
             "nominal"=> "required|min:4",
         ]);
 
-        $query = DB::table("spps")->where('id_spp', $id)->update([
+        $query = DB::table("spps")->where('id', $id)->update([
             'tahun' => $request["tahun"],
             'nominal' => $request["nominal"],
         ]);
@@ -88,7 +88,7 @@ class SppController extends Controller
     public function destroy(string $id)
     {
         //
-        $sppHapus = DB::table('spps')->where('id_spp', $id)->delete();
+        $sppHapus = DB::table('spps')->where('id', $id)->delete();
         return redirect()->route('spp.sppc.index')->with(['success'=> 'Data berhasil dihapus!']);
     }
 }
