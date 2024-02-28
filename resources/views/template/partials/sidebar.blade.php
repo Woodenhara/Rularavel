@@ -28,6 +28,12 @@
             </li>
 
             <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('siswa.index') }}">
+                    <i class="align-middle" data-feather="users"></i> <span class="align-middle">Siswa</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('auth.logout') }}">
                     <i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Log Out</span>
                 </a>

@@ -24,6 +24,7 @@ class StoreUserRequest extends FormRequest
         return [
             //
             'username'     => 'required',
+            'email'        => 'required|email',
             'password'     => 'required|min:8',
             'nama_petugas' => 'required|min:2',
             'level'        => 'required|in:admin,petugas',

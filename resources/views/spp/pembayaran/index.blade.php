@@ -11,6 +11,12 @@
 
 <div class="col-12 col-lg-20">
     <div class="card">
+        <div class="card-header">
+            <a href="{{ route('pembayaran.create') }}" class="btn btn-primary">
+                <i class="align-middle me-2" data-feather="plus-square"></i> <span
+                    class="align-middle">Tambah</span>
+            </a>
+        </div>
         <div class="card-body">
             <h1>Ini page pembayaran</h1>
             <p class="text-muted"><h3>Selamat Datang {{ Auth::user()->nama_petugas }}</h3></p>

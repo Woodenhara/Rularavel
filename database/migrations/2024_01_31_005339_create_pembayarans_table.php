@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId("id_user")->references("id")->on("users");
             $table->char('nisn', 10)->index();
-            $table->foreignId('id_siswa')->references('id')->on('siswas');
+            $table->foreign('nisn')->references('nisn')->on('siswas');
             $table->date('tgl_bayar');
-            $table->string('bulan_dibayar', 8);
-            $table->string('tahun_dibayar', 4);
             $table->foreignId("id_spp")->references("id")->on("spps");
             $table->integer('jumlah_bayar');
             $table->timestamps();

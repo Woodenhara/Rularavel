@@ -18,10 +18,20 @@
                 @enderror
             </div>
             <div class="card-header">
+                <h5 class="card-title mb-0">Email</h5>
+            </div>
+            <div class="card-body">
+                <input type="text" name="email" class="form-control @error('email') {{ 'is-invalid' }} @enderror"
+                    placeholder="Ketik disini" autocomplete="off" value="{{@old('email')}}">
+                @error('email')
+                <span class="error invalid-feedback" style="display: inline">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="card-header">
                 <h5 class="card-title mb-0">Password</h5>
             </div>
             <div class="card-body">
-                <input type="text" name="password" class="form-control @error('password') {{ 'is-invalid' }} @enderror"
+                <input type="password" name="password" class="form-control @error('password') {{ 'is-invalid' }} @enderror"
                     placeholder="Ketik disini" autocomplete="off" value="{{@old('password')}}">
                 @error('password')
                 <span class="error invalid-feedback" style="display: inline;">{{ $message }}</span>

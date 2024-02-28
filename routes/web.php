@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SppController;
@@ -35,9 +37,7 @@ Route::get('/tes', function() {
 
 
 Route::middleware(['can:isUser'])->group(function() {
-    Route::get('/pembayaran', function() {
-        return view('spp.pembayaran.index');
-    })->name('pembayaran');
+    Route::resource('/pembayaran', PembayaranController::class);
 });
 
 Route::middleware(['can:isAdmin'])->group(function() {
@@ -53,6 +53,7 @@ Route::middleware(['can:isAdmin'])->group(function() {
 
     Route::resource('/kelass', KelassController::class);
     Route::resource('/user', UserController::class);
+    Route::resource('/siswa', SiswaController::class);
 });
 
 

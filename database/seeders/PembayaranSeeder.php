@@ -25,8 +25,6 @@ class PembayaranSeeder extends Seeder
             'id_petugas' => $petugasId,
             'nisn' => $Nisn,
             'tgl_bayar' => now(),
-            'bulan_dibayar' => Str::random(8),
-            'tahun_dibayar' => rand(2000, 2024),
             'id_spp' => $sppId,
             'jumlah_bayar' => rand(0, 999999999),
         ]);

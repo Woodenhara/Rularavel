@@ -28,7 +28,6 @@
                     <tr>
                         <th>Id Kelas</th>
                         <th class="d-none d-xl-table-cell">Username</th>
-                        <th class="d-none d-xl-table-cell">Password</th>
                         <th class="d-none d-xl-table-cell">Nama Petugas</th>
                         <th class="d-none d-xl-table-cell">Level</th>
                         <th class="d-none d-xl-table-cell">Action</th>
@@ -42,9 +41,6 @@
                         </td>
                         <td>
                             {{ $value->username }}
-                        </td>
-                        <td>
-                            {{ $value->password }}
                         </td>
                         <td>
                             {{ $value->nama_petugas }}
