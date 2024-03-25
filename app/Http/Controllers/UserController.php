@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
+use Request;
 
 class UserController extends Controller
 {
@@ -29,12 +28,19 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreUserRequest $request, User $user)
+    public function store(Request $request, User $user)
     {
         //
+        $request->validate([
+            'username'     => 'required',
+            'email'        => 'required|email',
+            'password'     => 'required|min:8',
+            'nama_petugas' => 'required|min:2',
+            'level'        => 'required|in:admin,petugas',
+        ]);
+
         $user->create($request->all());
-        return redirect()->route('user.index')
-        ->with(['success' => 'Data '.$request['username'].' berhasil disimpan']);
+        return redirect()->route('user.index');
     }
 
     /**
@@ -58,12 +64,19 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUserRequest $request, User $user)
+    public function update(Request $request, User $user)
     {
         //
+        $request->validate([
+            'username'     => 'required',
+            'email'        => 'required|email',
+            'password'     => 'required|min:8',
+            'nama_petugas' => 'required|min:2',
+            'level'        => 'required|in:admin,petugas',
+        ]);
+
         $user->update($request->all());
-        return redirect()->route('user.index')
-        ->with(['success' => 'Data '.$request['username'].' berhasil diupdate']);
+        return redirect()->route('user.index');
     }
 
     /**

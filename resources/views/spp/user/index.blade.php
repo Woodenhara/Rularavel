@@ -49,12 +49,12 @@
                             {{ $value->level }}
                         </td>
                         <td>
-                            <form action="{{ route('kelass.destroy', $value->id) }}" method="post"
+                            <form action="{{ route('user.destroy', $value->id) }}" method="post"
                                 style="display: inline">
-                                <a href="{{ route('kelass.show', $value->id) }}" class="btn btn-sm btn-info">
+                                <a href="{{ route('user.show', $value->id) }}" class="btn btn-sm btn-info">
                                     Detail
                                 </a>
-                                <a href="{{ route('kelass.edit', $value->id) }}" class="btn btn-sm btn-warning">
+                                <a href="{{ route('user.edit', $value->id) }}" class="btn btn-sm btn-warning">
                                     Edit
                                 </a>
                                 @csrf

@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\PembayaranController;
-use App\Http\Controllers\SiswaController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SppController;
-use App\Http\Controllers\KelassController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\{
+    AuthController,
+    KelassController,
+    PembayaranController,
+    SiswaController,
+    SppController,
+    UserController,
+};
 
 /*
 |--------------------------------------------------------------------------

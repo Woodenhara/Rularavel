@@ -57,7 +57,7 @@ class PembayaranController extends Controller
             'jumlah_bayar'   => 'required|numeric',
         ]);
 
-        $pembayaran->create($request->all());
+        $pembayaran->update($request->all());
         return redirect()->route('pembayaran.index')
         ->with(['success' => 'Data '.$request['nisn'].' berhasil disimpan']);
     }
