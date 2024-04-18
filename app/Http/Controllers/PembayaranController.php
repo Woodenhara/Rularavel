@@ -23,7 +23,7 @@ class PembayaranController extends Controller
         $siswa = Siswas::all(['nisn', 'nama']);
         $spp = Spp::all(['id']);
         return view('spp.pembayaran.index', [
-            'pembayarans' => $pembayaran,
+            'pembayaran' => $pembayaran,
             'user' => $user,
             'siswas' => $siswa,
             'spp' => $spp,
@@ -76,7 +76,12 @@ class PembayaranController extends Controller
     public function edit(Pembayaran $pembayaran)
     {
         //
-        return view('spp.pembayaran.edit', compact('pembayarans'));
+        return view('spp.pembayaran.edit', [
+            'pembayaran' => $pembayaran,
+            'id_user' => User::all(['id', 'username']),
+            'siswas' => Siswas::all(['nisn', 'nama']),
+            'spp' => Spp::all(['id']),
+            ]);
     }
 
     /**
