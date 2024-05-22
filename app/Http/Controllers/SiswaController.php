@@ -70,7 +70,7 @@ class SiswaController extends Controller
     public function edit(Siswas $siswa)
     {
         //
-        return view('spp.siswa.edit', compact('siswas'));
+        return view('spp.siswa.edit', compact('siswa'));
     }
 
     /**
