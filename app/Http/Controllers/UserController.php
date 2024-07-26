@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-use Request;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -34,7 +34,7 @@ class UserController extends Controller
         $request->validate([
             'username'     => 'required',
             'email'        => 'required|email',
-            'password'     => 'required|min:8',
+            'password'     => 'required|min:4',
             'nama_petugas' => 'required|min:2',
             'level'        => 'required|in:admin,petugas',
         ]);
